@@ -1,5 +1,4 @@
 import java.util.*
- 
 class MazeGenerator(val x: Int, val y: Int) {
     private val maze = Array(x) { IntArray(y) }
  
@@ -14,7 +13,6 @@ class MazeGenerator(val x: Int, val y: Int) {
             }
         }
     }
- 
     fun display() {
         for (i in 0..y - 1) {
             // draw the north edge
@@ -32,13 +30,11 @@ class MazeGenerator(val x: Int, val y: Int) {
         for (j in 0..x - 1) print("+---")
         println('+')
     }
- 
     inline private fun <reified T> Array<T>.shuffle(): Array<T> {
         val list = toMutableList()
         Collections.shuffle(list)
         return list.toTypedArray()
     }
- 
     private enum class Direction(val bit: Int, val dx: Int, val dy: Int) {
         N(1, 0, -1), S(2, 0, 1), E(4, 1, 0),W(8, -1, 0);
  
